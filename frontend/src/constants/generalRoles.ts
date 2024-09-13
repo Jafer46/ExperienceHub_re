@@ -1,0 +1,5 @@
+export enum GENERALROLES {
+  ADMIN = 'ADMIN',
+  SUPERADMIN = 'SUPERADMIN',
+  USER = 'USER'
+}

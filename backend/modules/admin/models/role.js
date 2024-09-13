@@ -13,7 +13,8 @@ const roleSchema = mongoose.Schema(
       type: String
     },
     allowedRoutes: {
-      type: [String]
+      type: [mongoose.Types.ObjectId],
+      ref: 'Route'
     }
   },
   {

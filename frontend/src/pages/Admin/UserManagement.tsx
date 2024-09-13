@@ -1,3 +1,5 @@
+import { DataTableDemo } from './components/DataTable'
+
 export default function UserManagement () {
-  return <div></div>
+  return <DataTableDemo />
 }

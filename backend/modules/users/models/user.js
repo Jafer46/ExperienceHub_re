@@ -21,6 +21,9 @@ const userSchema = mongoose.Schema(
       type: [mongoose.Types.ObjectId],
       ref: 'User'
     },
+    status: {
+      type: number
+    },
     role: {
       type: mongoose.Types.ObjectId,
       ref: 'Role'
