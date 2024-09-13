@@ -1,0 +1,7 @@
+const GENERALROLES = {
+  ADMIN: 'ADMIN',
+  SUPERADMIN: 'SUPERADMIN',
+  USER: 'USER'
+}
+
+module.exports = GENERALROLES
