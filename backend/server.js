@@ -6,6 +6,8 @@ const app = express()
 
 dbconnection()
 
+app.use(express.json())
+
 app.listen(port, () => {
   console.log(`app is listening to port ${port}`)
 })
