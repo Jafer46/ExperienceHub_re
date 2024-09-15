@@ -22,6 +22,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import React from 'react'
+import CreateAdminForm from './CreateAdminForm'
 
 export default function CreateAdmin () {
   const [open, setOpen] = React.useState(false)
@@ -40,7 +41,7 @@ export default function CreateAdmin () {
               Make changes to your profile here. Click save when you're done.
             </DialogDescription>
           </DialogHeader>
-          <ProfileForm />
+          <CreateAdminForm />
         </DialogContent>
       </Dialog>
     )
@@ -58,7 +59,8 @@ export default function CreateAdmin () {
             Make changes to your profile here. Click save when you're done.
           </DrawerDescription>
         </DrawerHeader>
-        <ProfileForm className='px-4' />
+        {/* <ProfileForm className='px-4' /> */}
+        <CreateAdminForm />
         <DrawerFooter className='pt-2'>
           <DrawerClose asChild>
             <Button variant='outline'>Cancel</Button>
