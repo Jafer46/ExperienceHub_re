@@ -13,41 +13,71 @@ import {
 } from '@/components/ui/sheet'
 
 import menuIcon from '../assets/menu.png'
+import { Link } from 'react-router-dom'
+import {
+  Home,
+  LineChart,
+  Package,
+  Package2,
+  PanelLeft,
+  ShoppingCart,
+  Users2
+} from 'lucide-react'
 
 export function LeftSheet () {
   return (
     <Sheet>
-      <SheetTrigger asChild className='absolute right-0 top-0'>
-        <Button variant='outline' className='p-1 mr-2 mt-2'>
-          <img src={menuIcon} alt='' className='w-[24px]' />
+      <SheetTrigger asChild>
+        <Button size='icon' variant='outline' className='sm:hidden'>
+          <PanelLeft className='h-5 w-5' />
+          <span className='sr-only'>Toggle Menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent>
-        <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you're done.
-          </SheetDescription>
-        </SheetHeader>
-        <div className='grid gap-4 py-4'>
-          <div className='grid grid-cols-4 items-center gap-4'>
-            <Label htmlFor='name' className='text-right'>
-              Name
-            </Label>
-            <Input id='name' value='Pedro Duarte' className='col-span-3' />
-          </div>
-          <div className='grid grid-cols-4 items-center gap-4'>
-            <Label htmlFor='username' className='text-right'>
-              Username
-            </Label>
-            <Input id='username' value='@peduarte' className='col-span-3' />
-          </div>
-        </div>
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button type='submit'>Save changes</Button>
-          </SheetClose>
-        </SheetFooter>
+      <SheetContent side='left' className='sm:max-w-xs'>
+        <nav className='grid gap-6 text-lg font-medium'>
+          <Link
+            to='#'
+            className='group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base'
+          >
+            <Package2 className='h-5 w-5 transition-all group-hover:scale-110' />
+            <span className='sr-only'>Acme Inc</span>
+          </Link>
+          <Link
+            to='#'
+            className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
+          >
+            <Home className='h-5 w-5' />
+            Dashboard
+          </Link>
+          <Link
+            to='#'
+            className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
+          >
+            <ShoppingCart className='h-5 w-5' />
+            Orders
+          </Link>
+          <Link
+            to='#'
+            className='flex items-center gap-4 px-2.5 text-foreground'
+          >
+            <Package className='h-5 w-5' />
+            Products
+          </Link>
+          <Link
+            to='#'
+            className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
+          >
+            <Users2 className='h-5 w-5' />
+            Customers
+          </Link>
+          <Link
+            to='#'
+            className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
+          >
+            <LineChart className='h-5 w-5' />
+            Settings
+          </Link>
+        </nav>
       </SheetContent>
     </Sheet>
   )

@@ -3,7 +3,7 @@ import Layout from './pages/user/Layout'
 import AdminLayout from './pages/Admin/Layout'
 import Dashboard from './pages/Admin/Dashboard'
 import UserManagement from './pages/Admin/UserManagement'
-import Feed from './pages/user/feed'
+import Feed from './pages/user/Feed'
 
 export const routes = createBrowserRouter([
   {
