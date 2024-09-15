@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { LeftSheet } from './LeftSheet'
 import {
   Breadcrumb,
@@ -21,6 +21,7 @@ import {
 import { Button } from './ui/button'
 
 export default function TopBar () {
+  const location = useLocation()
   return (
     <header className='sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6'>
       <LeftSheet />
@@ -39,7 +40,9 @@ export default function TopBar () {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>Edit Product</BreadcrumbPage>
+            <BreadcrumbPage>
+              {location.pathname.replace('/', '')}
+            </BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>

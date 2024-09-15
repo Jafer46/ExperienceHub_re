@@ -3,13 +3,17 @@ import Layout from './pages/user/Layout'
 import AdminLayout from './pages/Admin/Layout'
 import Dashboard from './pages/Admin/Dashboard'
 import UserManagement from './pages/Admin/UserManagement'
-import Feed from './pages/user/Feed'
+import Feed from './pages/user/feed'
+import Messages from './pages/user/Messages'
 
 export const routes = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
-    children: [{ index: true, element: <Feed /> }]
+    children: [
+      { index: true, element: <Feed /> },
+      { path: 'messages', element: <Messages /> }
+    ]
   },
   {
     path: '/admin',
