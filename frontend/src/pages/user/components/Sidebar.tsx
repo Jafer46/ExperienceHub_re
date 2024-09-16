@@ -35,7 +35,7 @@ export default function Sidebar () {
 
   if (isMobile) {
     return (
-      <aside className='fixed inset-y-0 left-0 z-10 w-14 flex-col border-r bg-background flex'>
+      <aside className='fixed inset-y-0 left-0 z-10 w-14 flex-col border-r flex rounded-xl border bg-card text-card-foreground shadow ml-2 my-2'>
         <nav className='flex flex-col items-center gap-4 px-2 py-4'>
           <Link
             to='#'
@@ -135,9 +135,9 @@ export default function Sidebar () {
     )
   }
   return (
-    <div className='hidden border-r bg-muted/40 md:block'>
+    <div className='hidden border-r md:block rounded-xl border bg-card text-card-foreground shadow ml-2 my-2'>
       <div className='flex h-full max-h-screen flex-col gap-2'>
-        <div className='flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6'>
+        <div className='flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6 '>
           <Link to='/' className='flex items-center gap-2 font-semibold'>
             <Package2 className='h-6 w-6' />
             <span className=''>Acme Inc</span>

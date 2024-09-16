@@ -1,15 +1,16 @@
 export interface User {
-  _id: string
+  _id?: string
   username: string
   email?: string
-  password: string
+  avatar?: string
+  password?: string
   status?: number
   freinds?: User[]
   role?: Role
 }
 
 export interface Role {
-  _id: string
+  _id?: string
   name: string
   description: string
   generalRole: string
@@ -17,6 +18,7 @@ export interface Role {
 }
 
 export interface Route {
+  _id?: string
   name: string
   path: string
 }

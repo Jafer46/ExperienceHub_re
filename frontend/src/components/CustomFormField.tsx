@@ -9,8 +9,8 @@ import {
 import { Input } from './ui/input'
 import { Control } from 'react-hook-form'
 import { FormFieldType } from '../constants/formConstants'
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+// import 'react-phone-number-input/style.css'
+// import PhoneInput from 'react-phone-number-input'
 import { Button } from './ui/button'
 import { EyeIcon, EyeOffIcon } from 'lucide-react'
 import { CalendarIcon } from '@radix-ui/react-icons'
@@ -27,6 +27,7 @@ import {
   SelectTrigger,
   SelectValue
 } from './ui/select'
+import { PhoneInput } from './ui/phone-input'
 
 interface CustomProps {
   control: Control<any>
@@ -170,12 +171,8 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             defaultCountry='ET'
             placeholder={placeHolder}
             international
-            withCountryCallingCode
             value={field.value}
             onChange={field.onChange}
-            className={cn(
-              'flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50'
-            )}
           />
         </FormControl>
       )
