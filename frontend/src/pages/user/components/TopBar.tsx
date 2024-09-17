@@ -20,6 +20,7 @@ import { Button } from '@/components/ui/button'
 import { Search } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import UserListDrawer from './UserListDrawer'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 export default function TopBar () {
   const location = useLocation()
@@ -63,13 +64,10 @@ export default function TopBar () {
             size='icon'
             className='overflow-hidden rounded-full'
           >
-            <img
-              src='/placeholder-user.jpg'
-              width={36}
-              height={36}
-              alt='Avatar'
-              className='overflow-hidden rounded-full'
-            />
+            <Avatar>
+              <AvatarImage src='https://github.com/shadcn.png' alt='@shadcn' />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align='end'>

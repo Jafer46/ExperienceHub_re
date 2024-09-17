@@ -22,3 +22,9 @@ export interface Route {
   name: string
   path: string
 }
+
+export interface Post {
+  _id?: string
+  title: string
+  description: string
+}
