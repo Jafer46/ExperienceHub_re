@@ -16,3 +16,12 @@ export const userFormValidation = z.object({
     .refine(phone => /^\+\d{10,15}$/.test(phone), 'Invalid phone number')
     .optional()
 })
+
+export const roleFormValidation = z.object({
+  name: z
+    .string()
+    .min(3, 'Role Name must be at least three characters.')
+    .max(20, 'Role Name must be lessthen 20 characters.'),
+  description: z.string().optional(),
+  generalRole: z.string()
+})

@@ -72,3 +72,7 @@ input {
   height: 100%;
   outline: none;
 }
+
+.invert-color {
+  filter: invert(100%);
+}

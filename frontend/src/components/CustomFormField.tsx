@@ -28,6 +28,7 @@ import {
   SelectValue
 } from './ui/select'
 import { PhoneInput } from './ui/phone-input'
+import { Textarea } from './ui/textarea'
 
 interface CustomProps {
   control: Control<any>
@@ -177,6 +178,16 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
         </FormControl>
       )
       break
+    case FormFieldType.TEXTAREA:
+      return (
+        <FormControl>
+          <Textarea
+            placeholder={placeHolder}
+            value={field.value}
+            onChange={field.onChange}
+          />
+        </FormControl>
+      )
     default:
       break
   }
