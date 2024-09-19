@@ -25,6 +25,11 @@ export interface Route {
 
 export interface Post {
   _id?: string
-  title: string
+  name: string
   description: string
+  pictures: string[]
+  rate: number
+  number_of_rates: number
+  payment_per_night: number
+  number_of_beds: number
 }
