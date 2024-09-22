@@ -10,7 +10,7 @@ export interface User {
 }
 
 export interface Role {
-  _id?: string
+  _id: string
   name: string
   description: string
   generalRole: string

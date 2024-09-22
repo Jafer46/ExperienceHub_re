@@ -132,7 +132,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             <Input
               type={showPassword ? 'text' : 'password'} // Change input type based on state
               className='hide-password-toggle pr-10'
-              placeholder='ex 1234.....'
+              placeholder={placeHolder}
               {...field}
             />
           </FormControl>
@@ -185,6 +185,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             placeholder={placeHolder}
             value={field.value}
             onChange={field.onChange}
+            {...field}
           />
         </FormControl>
       )

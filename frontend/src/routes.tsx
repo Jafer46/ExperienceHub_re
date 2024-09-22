@@ -5,6 +5,7 @@ import Dashboard from './pages/Admin/Dashboard'
 import UserManagement from './pages/Admin/UserManagement'
 import Messages from './pages/user/Messages'
 import Feed from './pages/user/Feed'
+import RoleManagement from './pages/Admin/RoleManagment'
 
 export const routes = createBrowserRouter([
   {
@@ -20,7 +21,8 @@ export const routes = createBrowserRouter([
     element: <AdminLayout />,
     children: [
       { index: true, element: <Dashboard /> },
-      { path: 'users', element: <UserManagement /> }
+      { path: 'users', element: <UserManagement /> },
+      { path: 'roles', element: <RoleManagement /> }
     ]
   }
 ])
