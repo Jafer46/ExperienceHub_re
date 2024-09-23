@@ -1,14 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue
-} from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
 import {
   Tooltip,
@@ -16,14 +8,7 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from '@/components/ui/tooltip'
-import {
-  Bird,
-  CornerDownLeft,
-  Mic,
-  Paperclip,
-  Rabbit,
-  Turtle
-} from 'lucide-react'
+import { CornerDownLeft, Mic, Paperclip } from 'lucide-react'
 import UserMessageList from './components/userMessageList'
 
 export default function Messages () {

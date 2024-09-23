@@ -6,6 +6,7 @@ import {
   TooltipProvider,
   TooltipTrigger
 } from '@/components/ui/tooltip'
+import useAuth from '@/store/authstore'
 import { useMediaQuery } from '@uidotdev/usehooks'
 import {
   Bell,
@@ -19,11 +20,30 @@ import {
   Users2
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { useQuery } from '@tanstack/react-query'
+import { getGuestRoutes, getRoutes } from '@/api/routesApi'
+import { Route } from '@/constants/schema'
 
 export default function Sidebar () {
   const isMobile = useMediaQuery(
     'only screen and (max-width : 768px) and (min-width : 640px)'
   )
+
+  const { token } = useAuth()
+  let routes: Route[] | undefined
+  if (token == '') {
+    const { data } = useQuery({
+      queryKey: ['routes'],
+      queryFn: () => getGuestRoutes()
+    })
+    routes = data
+  } else {
+    const { data } = useQuery({
+      queryKey: ['routes'],
+      queryFn: () => getRoutes(token)
+    })
+    routes = data
+  }
 
   if (isMobile) {
     return (
@@ -36,20 +56,23 @@ export default function Sidebar () {
             <Package2 className='h-4 w-4 transition-all group-hover:scale-110' />
             <span className='sr-only'>Acme Inc</span>
           </Link>
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Link
-                  to='#'
-                  className='flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8'
-                >
-                  <Home className='h-5 w-5' />
-                  <span className='sr-only'>Dashboard</span>
-                </Link>
-              </TooltipTrigger>
-              <TooltipContent side='right'>Dashboard</TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          {routes?.map(route => (
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    to={route.path}
+                    className='flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8'
+                  >
+                    <Home className='h-5 w-5' />
+                    <span className='sr-only'>{route.name}</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent side='right'>{route.name}</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          ))}
+
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
